@@ -1,0 +1,22 @@
+﻿version: 2
+
+models:
+  - name: mart_green_compute_dispatch
+    description: "Enterprise Gold Mart governing green-window compute scheduling."
+    columns:
+      - name: region
+        description: "UK DNO Region Name"
+        tests:
+          - unique
+          - not_null
+
+      - name: forecast_gco2_kwh
+        description: "Forecasted Carbon intensity in gCO2/kWh"
+        tests:
+          - not_null
+
+      - name: dispatch_tier
+        description: "Operational routing tier based on grid intensity"
+        tests:
+          - accepted_values:
+              values: ['OPTIMAL', 'STANDARD', 'DEFER']

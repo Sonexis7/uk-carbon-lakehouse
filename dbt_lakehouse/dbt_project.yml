@@ -1,0 +1,17 @@
+﻿name: 'dbt_lakehouse'
+version: '1.0.0'
+config-version: 2
+
+profile: 'dbt_lakehouse'
+
+model-paths: ["models"]
+test-paths: ["tests"]
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  dbt_lakehouse:
+    gold:
+      +materialized: table
