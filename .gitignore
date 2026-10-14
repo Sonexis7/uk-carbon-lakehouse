@@ -1,10 +1,24 @@
-.venv/
-__pycache__/
+﻿# Environments & Bytecode
+venv/
 *.pyc
-.DS_Store
+__pycache__/
 
-# Data lakehouse storage (keeps raw binaries out of GitHub)
+# Logs & dbt internal metadata
+logs/
+dbt_lakehouse/logs/
+dbt_lakehouse/target/
+dbt_lakehouse/dbt_packages/
+dbt_lakehouse/.user.yml
+
+# Storage & Data artifacts
 lakehouse/bronze/
 lakehouse/silver/
-lakehouse/gold/
-*.parquet
+lakehouse/gold/*.parquet
+lakehouse/gold/*.duckdb
+lakehouse/gold/*.wal
+*.duckdb
+*.duckdb.wal
+
+# Local IDE & Streamlit state
+.vscode/
+.streamlit/
